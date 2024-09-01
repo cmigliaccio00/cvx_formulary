@@ -30,7 +30,7 @@
 %\thispagestyle{headings}
 
 \usepackage{graphicx} % Required for inserting images
-\usepackage[a4paper, top=1cm, left=1.5cm, bottom=1.3cm, right=1.5cm]{geometry}
+\usepackage[a4paper, top=1cm, left=1.5cm, bottom=1.4cm, right=1.5cm]{geometry}
 
 \title{
     \vspace{-1.5cm}
@@ -81,13 +81,13 @@ $\Vert x+y \Vert \le \Vert x \Vert + \Vert y \Vert$
  $S=\{x^{(1)}, ..., x^{(n)}\}$ \textbf{mutually orthogonal} $\iff$ $\langle{x,y}\rangle = \begin{cases}
     0 \quad i{\ne}j\\
     \ne 0 \quad i= j
- \end{cases}$, \textbf{orthonormal} $\iff$ $\langle{x,y}\rangle = \begin{cases}
+ \end{cases}$ \textbf{orthonormal} $\iff$ $\langle{x,y}\rangle = \begin{cases}
     1 \quad i{\ne}j\\
      0 \quad i= j
  \end{cases}$\\
 \textbf{Vector $\perp$ Subspace} $\mathcal{S}\subseteq\mathcal{X}$, $x\in\mathcal{X}$, $x\perp\mathcal{S} \ \iff \langle{x,s}\rangle=0, \forall{s}\in\mathcal{S}$, $\mathcal{S}^{\perp}=\{x\in\mathcal{X}: \langle{x,s}\rangle=0, \forall{s}\in\mathcal{S}\}$\\
  \textbf{Orthogonal decomposition of a vector} $\forall{x}\in\mathcal{X}, x=x_1+x_2: \ x_1 \in \mathcal{S}, x_2 \in \mathcal{S}^{\perp}$ $\iff$ $\mathcal{X} = \mathcal{S} \oplus \mathcal{S}^{\perp}$\\
-\textbf{Projections} $\Pi_{\mathcal{S}}(x)=\min_{y\in\mathcal{S}} \Vert y-s \Vert$ -- (\textit{Projection Theorem})
+\textbf{Projections} $\Pi_{\mathcal{S}}(x)=\min_{y\in\mathcal{S}} \Vert y-s \Vert$ -- (\textit{\textsf{Projection Theorem}})
 $
 \begin{cases}
     x^*\in\mathcal{S} \ \text{is unique} \\
@@ -571,9 +571,9 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     $x^i$ is the $i$-th block of the decision variable, $n_i$ its dimension.
     \newcolumn\\
     \textbf{SOC constraints}\\
-    Given $u=\Vert Ax+b \Vert_2$, $t=c^T{x}+b$\\
+    Given $u= Ax+b$, $t=c^T{x}+d$\\
 
-    $\mathcal{K}=\{x: \Vert Ax+b \Vert_2 \le c^T{x}+b\}$
+    $\mathcal{K}=\{x: \Vert Ax+b \Vert_2 \le c^T{x}+d\}$
     \begin{center}
     \end{center}
     \newcolumn
@@ -581,7 +581,7 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     \begin{center}
         $\begin{aligned}
             &\min_{x} {c^T{x}}\\
-            &\text{s.t.} \ \Vert A_i{x}+b_i \Vert_2 \le c_i^T{x}+b_i
+            &\text{s.t.} \ \Vert A_i{x}+d_i \Vert_2 \le c_i^T{x}+b_i
         \end{aligned}$
     \end{center}
     \hrule
@@ -670,12 +670,12 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     \noindent
 Example (LP Program)
 \begin{verbatim}
-cvx_begin
+cvx_begin [quiet]
     cvx_solver mosek        
-    variable x(2)       % name(dimension)
+    variable(s) x(2)    % name(dimension)
     minimize (c'*x)     %objective function
     subject to             
-        A*x <= b        %constraints
+        A*x <= b;       %constraints
 cvx_end 
 \end{verbatim}
     \newcolumn
@@ -846,7 +846,7 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     It holds that (GA converges to a stationary point):\\
     $\alpha{s_{\text{lb}}}\sum_{i=0}^k {\Vert \nabla{f_0}(x_i) \Vert_2^2} \le f_0(x_0)-f_0^*$,  
     $\underset{k\to\infty}{\lim}{\Vert \nabla{f_0}(x_i) \Vert_2}=0$\\
-    \textbf{Stopping criterion} $\to \ \Vert \nabla{f_0}(x)\nabla \Vert_2 < \varepsilon, \varepsilon>0$\\
+    \textbf{Stopping criterion} $\to \ \Vert \nabla{f_0}(x) \Vert_2 < \varepsilon, \varepsilon>0$\\
     $f_0$ convex $\to$ $x^*$ is a global minimizer.\\
     $\underset{\Vert \nabla{f_0(x_k)} \Vert_2 \to 0}{\textbf{Convergence}}$ $\begin{cases}
         O(1/\sqrt{k})&f_0 \ \text{generic}\\
@@ -859,7 +859,10 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     $\nabla{q(x)}\!=\!\nabla{f_0(x_k)}+\frac{1}{s}(x-x_k)=0 \Leftrightarrow\underset{\text{Gradient Algorithm}}{x_{k+1}=x_k-s\nabla{f_0(x_k)}}$\\
     \textbf{Conclusion:} $x$ is updated $\forall{k}$ by minimizing $q(x_k)$. $\square$
  \end{multicols}
-\vspace{-0.8cm}
+\vspace{-1.1cm}
+\noindent
+\rule{\textwidth}{1.5pt}
+
 \subsection*{\underline{14. Newton Algorithm (NA)} (\textsf{unconstrained case})}   
 \vspace{-0.3cm}
 \begin{multicols}{2}
@@ -968,7 +971,8 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     \noindent
 \end{multicols}
 \vspace{-0.2cm}
-\hrule
+\noindent
+\rule{\textwidth}{1.3pt}
 \noindent
 \textbf{$2^{nd}$ approach: \textit{Barrier Method}}
 \vspace{-0.4cm}
@@ -1062,6 +1066,8 @@ Monomials, Posynomials and Generalized posynomials \textbf{are not convex!} $\to
 \tilde{y}(x)=\log\bigg({\sum_{i=1}^{k}{e^{a_{(i)}^T{y}+b_i}}}\bigg)=\text{lse}(Ax+b)$\\
 log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad \dots \quad b_n]^T$\\
 \newpage
+
+\noindent
 \textbf{Standard form for GP} Here $f_0(x), f_i(x)$ are posynomials, $h_i(x)$ are (possibly) monomials
 \vspace{-0.3cm}
 \begin{multicols}{2}
@@ -1083,6 +1089,27 @@ log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad 
 \textbf{Generalized GP} $f_0, ..., f_m$ are generalized posynomials $\to$ GGP (Generalized GP)\\
 {\small{\textbf{Fractional power}}} $f_1(x)^\alpha + f_2(x)^\beta\le1 \Rightarrow \underbrace{f_1(x)\le{t_1}, \ f_2(x)\le{t_2}, \ t_1^\alpha+t_2^\beta\le1}_{\text{GP constraints}}$  \\
 {\small{\textbf{Pointwise maximum power}}} $\max(f_1(x), f_2(x))+f_3(x)\le1 \Rightarrow 
-\underbrace{f_1(x)\le{t}, f_2(x)\le{t}, t+f_3(x)\le1}_{\text{GP constraints}}$ 
+\underbrace{f_1(x)\le{t}, f_2(x)\le{t}, t+f_3(x)\le1}_{\text{GP constraints}}$ \\
+
+\noindent
+\subsection*{\underline{APPENDIX}}
+\textbf{Schur complement} $M=\begin{bmatrix}
+    A&X^T\\
+    X&B
+\end{bmatrix}, A,B\in\mathbb{S}^n \ M\succeq0 \  \iff S=A-XB^{-1}X^T\succeq0$  \\
+\textbf{Young inequality} If $a\ge0$, $b\ge0$, $p>1$, $q>1$ such that $\frac{1}{p}+\frac{1}{q}=1$ then $ab \le \frac{1}{p}{a^p}+\frac{1}{q}{b^q}$ \textsf{(Jensen's inequality can be used in order to demonstrate it)}\\
+\textbf{Maxima of inner product over a ball} $\underset{\Vert x \Vert_p \le 1}{\max} x^Ty$ $\begin{cases}
+    \max_{\Vert x \Vert_2\le1}{x^T{y}}=\Vert{y}\Vert_2, \ x^{*}=\frac{y}{\Vert{y}\Vert_2}&{p=2}\\
+    \max_{\Vert{x}\Vert_\infty\le1}{x^T{y}}=\sum_{i=1}^{n}{\vert{y_i}\vert}=\Vert{y}\Vert, \ x^{*}_\infty=\text{sgn}(y)&{p=\infty}\\
+    \begin{aligned}
+        &\max_{\Vert{x}\Vert_1\le{1}}{x^T{y}}=\max_i{\vert{y_i}\vert}=\Vert{y}\Vert_\infty \\
+        &[x_1^{*}]_i=\begin{cases}
+           sgn(y_i)&\text{if} \ i=m\\
+           0&\text{otherwise}
+       \end{cases}, \ i=1,...,n
+    \end{aligned}&p=1
+   
+\end{cases}$
+
 
 \end{document}

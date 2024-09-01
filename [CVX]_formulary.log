@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  20 AUG 2024 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  1 SEP 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/1__[01OUWOV]_Convex_Optimization_and_Engineering_applications/cvx_formulary/[CVX]_formulary.tex"
-(c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/1__[01OUWOV]_Convex_Optimization_and_Engineering_applications/cvx_formulary/[CVX]_formulary.tex
+**"c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/1__[01OUWOV]_Convex_Optimization_and_Engineering_applications/cvx_formulary/cvx_formulary/[CVX]_formulary.tex"
+(c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/1__[01OUWOV]_Convex_Optimization_and_Engineering_applications/cvx_formulary/cvx_formulary/[CVX]_formulary.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -499,11 +499,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
-* v-part:(T,H,B)=(28.45274pt, 779.60544pt, 36.98866pt)
+* v-part:(T,H,B)=(28.45274pt, 776.76042pt, 39.83368pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=512.14963pt
-* \textheight=779.60544pt
+* \textheight=776.76042pt
 * \oddsidemargin=-29.59087pt
 * \evensidemargin=-29.59087pt
 * \topmargin=-80.81725pt
@@ -532,6 +532,9 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 90.
+
 Overfull \hbox (29.37486pt too wide) in paragraph at lines 111--141
 \OT1/cmr/bx/n/10 Fundamental thm. of lin-ear al-ge-bra \OT1/cmr/m/n/10 For any $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]$ $[]$
  []
@@ -606,7 +609,10 @@ Overfull \hbox (4.89966pt too wide) in paragraph at lines 289--297
  []
 
 
-Overfull \vbox (1.02795pt too high) has occurred while \output is active []
+Overfull \vbox (0.99667pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (3.87297pt too high) has occurred while \output is active []
 
  [3]
 Underfull \hbox (badness 10000) in paragraph at lines 298--301
@@ -631,15 +637,15 @@ Overfull \hbox (3.00978pt too wide) in paragraph at lines 421--435
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 439.
 
-[4]
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 478.
 
+Overfull \vbox (1.71124pt too high) has occurred while \output is active []
+
+ [4]
 Underfull \hbox (badness 10000) in paragraph at lines 503--506
 
  []
 
-<img/LP_fig.png, id=48, 540.51938pt x 425.33907pt>
+<img/LP_fig.png, id=49, 540.51938pt x 425.33907pt>
 File: img/LP_fig.png Graphic file (type png)
 <use img/LP_fig.png>
 Package pdftex.def Info: img/LP_fig.png  used on input line 530.
@@ -743,53 +749,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 845--856
  []
 
 
-Overfull \hbox (0.60173pt too wide) in paragraph at lines 871--875
+Overfull \hbox (0.60173pt too wide) in paragraph at lines 874--878
 $[]$ 
  []
 
 <img/newton.png, id=64, 305.64188pt x 258.9675pt>
 File: img/newton.png Graphic file (type png)
 <use img/newton.png>
-Package pdftex.def Info: img/newton.png  used on input line 877.
+Package pdftex.def Info: img/newton.png  used on input line 880.
 (pdftex.def)             Requested size: 106.97624pt x 90.63997pt.
 
-Overfull \hbox (12.91148pt too wide) in paragraph at lines 900--911
+Overfull \hbox (12.91148pt too wide) in paragraph at lines 903--914
 \OT1/cmr/m/n/10 2 phases: $[]$ 
  []
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 912.
+LaTeX Font Warning: Command \small invalid in math mode on input line 915.
 
 
-Overfull \hbox (2.3431pt too wide) detected at line 914
+Overfull \hbox (2.3431pt too wide) detected at line 917
 \OML/cmm/m/it/10 v \OT1/cmr/m/n/10 = [] [] []
  []
 
 
-Overfull \vbox (4.96954pt too high) has occurred while \output is active []
+Overfull \vbox (11.27864pt too high) has occurred while \output is active []
 
  [7 <./img/gradient_1.png> <./img/gradient_2.png> <./img/newton.png>]
 <img/barrier.png, id=72, 546.54187pt x 219.82124pt>
 File: img/barrier.png Graphic file (type png)
 <use img/barrier.png>
-Package pdftex.def Info: img/barrier.png  used on input line 984.
+Package pdftex.def Info: img/barrier.png  used on input line 988.
 (pdftex.def)             Requested size: 218.61287pt x 87.92693pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1045
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1049
 
  []
 
 
-Overfull \hbox (35.46036pt too wide) in paragraph at lines 1052--1064
+Overfull \hbox (35.46036pt too wide) in paragraph at lines 1056--1068
 \OT1/cmr/bx/n/10 Posynomial $\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 : \U/msb/m/n/10 R[] \OMS/cmsy/m/n/10 ! \U/msb/m/n/10 R$\OT1/cmr/m/n/10 , $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [][] []\OML/cmm/m/it/10 ;  c[]; x > \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; a[] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]$ \OT1/cmr/m/n/10 -- $[] []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1064
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1068
 
  []
 
-[8 <./img/barrier.png>] [9] (./[CVX]_formulary.aux)
+[8 <./img/barrier.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1088--1093
+
+ []
+
+[9] (./[CVX]_formulary.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -797,14 +808,14 @@ L3 programming layer <2024-02-20>
  ) 
 Here is how much of TeX's memory you used:
  9923 strings out of 474116
- 154720 string characters out of 5747718
+ 154762 string characters out of 5747718
  1970190 words of memory out of 5000000
  32097 multiletter control sequences out of 15000+600000
  573287 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,18n,93p,2564b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,22n,93p,2578b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on [CVX]_formulary.pdf (9 pages, 699083 bytes).
+Output written on [CVX]_formulary.pdf (9 pages, 701616 bytes).
 PDF statistics:
  241 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams

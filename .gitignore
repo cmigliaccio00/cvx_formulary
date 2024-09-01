@@ -3,3 +3,7 @@
 \[CVX]_formulary.synctex.gz
 \[CVX]_formulary.fdb_latexmk
 [CVX]_formulary.fls
+\[CVX\]_formulary.fdb_latexmk
+*.fls
+\[CVX\]_formulary.log
+\[CVX\]_formulary.synctex.gz

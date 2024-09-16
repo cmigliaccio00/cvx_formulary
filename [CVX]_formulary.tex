@@ -75,7 +75,7 @@ $\Vert x+y \Vert \le \Vert x \Vert + \Vert y \Vert$
 \textbf{$\ell_p$-norms} $\Vert x \Vert_p = \biggl(
     \sum_{i=0}^n{\vert x_i \vert}^p
 \biggr)^{1/p}$, $p=2 \to $ Euclidean Distance, $p=1 \to$ Manahattan Distance, $p=\infty\to$ max $x_i$\\
-\textbf{Inner Product}  $\langle x,y \rangle \ge 0$, $\langle x+y, z \rangle = \langle x,z \rangle + \langle y,z\rangle$, $\langle x,y\rangle=\langle y,x \rangle$, $\langle \alpha{x}, y \rangle=\alpha{\langle x,y \rangle }$, $\cos\theta=\frac{\langle{x,y}\rangle}{\Vert{x}\Vert_2 \Vert{y}\Vert_2 }$ \\
+\textbf{Inner Product}  $\langle x,x \rangle \ge 0$, $\langle x+y, z \rangle = \langle x,z \rangle + \langle y,z\rangle$, $\langle x,y\rangle=\langle y,x \rangle$, $\langle \alpha{x}, y \rangle=\alpha{\langle x,y \rangle }$, $\cos\theta=\frac{\langle{x,y}\rangle}{\Vert{x}\Vert_2 \Vert{y}\Vert_2 }$ \\
 \textbf{Standard inner product} $x, y \in \mathcal{X}$, $\langle x, y \rangle = x^T{y}=\sum_{i=1}^n{x_i y_i}$, \textbf{Schwarz inequality} $\langle x, y \rangle \le \Vert{x}\Vert_2 \Vert{y}\Vert_2$,\\
  $\Vert x \Vert_2 = \sqrt{x^T x} = \sqrt{\langle x,x \rangle}$, $x \perp y \iff \langle x,y \rangle=0 \iff \cos\theta=0$\\
  $S=\{x^{(1)}, ..., x^{(n)}\}$ \textbf{mutually orthogonal} $\iff$ $\langle{x,y}\rangle = \begin{cases}
@@ -100,8 +100,8 @@ $\text{graph}(f)=\{(x,f(x))\in\mathbb{R}^{n+1}: \ x\in \mathbb{R}^n\}$, $\text{e
 $f$ is \textbf{linear} $\iff$ $f(\alpha x_1 + \beta x_2) = \alpha f(x_1) + \beta f(x_2)$, $\alpha, \beta \in \mathbb{R}$, $\tilde{f}$ is \textbf{affine} $\iff$ $\tilde{f}-x_0$ is linear\\
 \textsf{any affine function can be written as: } $f(x)=a^T{x}+b$ where $a\in\mathbb{R}^n, \ b \in \mathbb{R}$, $b=f(0)$, $a_i = f(e_i)-b$, \\
 \textbf{Hyperplane} $\mathcal{H}=\{x\in\mathbb{R}^n: \ a^T x = b\}$, $a\in \mathbb{R}^n$ (normal direction), 
-$\mathcal{H}_{-} = \{x\in\mathbb{R}^n: \ a^T x \le b \}$, (open half-space) \\
-$\mathcal{H}_{++}=\{x\in\mathbb{R}^n: \ a^T x > b\}$ (closed half-space)\\
+$\mathcal{H}_{-} = \{x\in\mathbb{R}^n: \ a^T x \le b \}$, (closed half-space) \\
+$\mathcal{H}_{++}=\{x\in\mathbb{R}^n: \ a^T x > b\}$ (open half-space)\\
 \textbf{Gradient} Given $f:\mathbb{R}^n\to\mathbb{R}$ differentiable $\nabla{f}=\bigg[
     \frac{\partial f}{\partial x_1} \ \frac{\partial f}{\partial x_2}\ ... \ \frac{\partial f}{\partial x_n}
 \bigg]^T$, $\nabla{f}(x_0)^T \cdot v $ (directional derivatives)\\
@@ -139,15 +139,15 @@ $\Vert A \Vert_1 = \max_{j=1,...,m}{\sum_{i=1}^n \vert a_{ij} \vert}, \
 \Vert  A \Vert_2 = \sqrt{\lambda_{\text{max}} (A^T A)} $ {\tiny{(see variational characterization)}}\\
 \textbf{Spectral radius} $A\in\mathbb{R}^{n,n}$ $\rho(A)\doteq\max_{i=1,...,n} \vert \lambda_i(A) \vert$ --- $\rho(A)\le\min(\Vert A \Vert_1, \Vert A \Vert_\infty)$
 \subsection*{\underline{4. Symmetric Matrices and SVD}}
-$A\in\mathbb{R}^{n,n}$ is \textbf{symmetric} if $AA^T=I_n \iff A^{-1}=A^T$, $\mathbb{S}^n$ is the subspace of \textbf{symmetric matrices} $n\times{n}$ \\
+$A\in\mathbb{R}^{n,n}$ is \textbf{symmetric} if $A=A^T$ , $\mathbb{S}^n$ is the subspace of \textbf{symmetric matrices} $n\times{n}$ \\
 \textbf{Examples:} (Hessian matrix given $f:\mathbb{R}^2\to\mathbb{R}$) $H=\begin{bmatrix}
     \frac{\partial{f}}{\partial{x_1^2}}&\frac{\partial{f}}{\partial{x_1{x_2}}}\\
     \frac{\partial{f}}{\partial{x_2{x_1}}}&\frac{\partial{f}}{\partial{x_2^2}}
 \end{bmatrix}$, (quadratic function) $q(x)=\frac{1}{2}x^T{H}x+c^T{x}+d$\\
 \textbf{Quadratic form} Given $A\in\mathbb{S}^n, \ \forall x \ne 0$ the function $q(x)=x^T A x$ is a \textbf{quadratic form associated with A}\\
 \textbf{Spectral theorem} Given $A\in\mathbb{S}^n$ it holds that: $\lambda_i\in\mathbb{R}, \ i=1,...,n$, exists $U=[u_1\quad\dots\quad{u_n}]$ orthogonal and $A=U\Lambda{U^T}=\sum_{i=1}^{n}{\lambda_i{u_i}u_i^T}$, $\Lambda=diag(\lambda_1, ..., \lambda_n)$. I can sort them $\lambda_{max}(A)=\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n=\lambda_{min}(A)$\\
-\textbf{Rayleigh quotient} given $A\in\mathbb{S}^n$, we can define $\forall x \in \mathbb{R}^n$ the quantity $r(x)=\frac{x^T{A}x}{x^T{x}}$ (Rayleigh quotient)\\
-\textbf{Theorem} For any $A\in\mathbb{S}^n, \ \forall x \ne 0$, $\lambda_{max} \le r(x) \le \lambda_{min}$, where 
+\textbf{Rayleigh quotient} given $A\in\mathbb{S}^n$, we can define $\forall x \in \mathbb{R}^n$ the quantity $r_{A}(x)=\frac{x^T{A}x}{x^T{x}}$ (Rayleigh quotient)\\
+\textbf{Theorem} For any $A\in\mathbb{S}^n, \ \forall x \ne 0$, $\lambda_{max} \le r_{A}(x) \le \lambda_{min}$, where 
 $\begin{cases}
     \lambda_{max}(A)=\max_{\Vert x \Vert_2=1} {x^T A x}&(x^*=u_1)\\
     \lambda_{min}(A)=\min_{\Vert x \Vert_2=1} {x^T A x}&(x^*=u_n)\\
@@ -388,13 +388,13 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
     \begin{center}
         $\begin{aligned}
             g^*=&\min_{x\in\mathbb{R}^n} f_0(x)\\
-            &\text{s.t} \ f_i(x)\le 0, \ h_i(x)=0\\
+            &\text{s.t} \ f_i(x)\le 0, \ h_i(x)\le0\\
         \end{aligned}$
     \end{center}
     \newcolumn
     \textsf{I can do this substitution if...}\\
     $f_0$ strictly decreasing, ${x: h(x)<0}\in \text{relint}(\mathcal{X})$ $\leftarrow$ (minimization)\\
-    $f_0$ strictly increasing, ${x: h(x)<0}\in \text{relint}(\mathcal{X})$ $\leftarrow$ (minimization)\\
+    $f_0$ strictly increasing, ${x: h(x)<0}\in \text{relint}(\mathcal{X})$ $\leftarrow$ (maximization)\\
 \end{multicols}
 \vspace{-0.5cm}
 \hrule
@@ -448,7 +448,7 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
     $f_0(x)=\underbrace{x^T\Sigma{x}}_{\text{risk}}-\underbrace{\gamma\ \hat{r}^T{x}}_{\text{return}}$, $\gamma>0$\\
     constraints: $x\ge0$, $\sum_{i}{x_i}=1$
     \newcolumn\\
-    \textbf{Example(2): LASSO Problem}\\
+    \textbf{Example(2): LASSO Problem} {\tiny{(see also coord. descent method)}}\\
     $\ell_1$-penalty: $\lambda{\Vert{x}\Vert_1}=\lambda\sum_{i} \vert x_i \vert$ (use of slack variables...) \\
     \textbf{Resulting problem}:
     \vspace{-0.3em}
@@ -554,7 +554,7 @@ if $x_f$ is not optimal $\iff$ there exists at least one $x$ for which $c^T{(x-x
 
 \subsection*{\underline{10. Second-order cone programs (SOCP)}}
 \textbf{Second order cone} $\mathcal{K}_p=\{(u,t): \ u\in\mathbb{R}^{p-1}, \ t\in\mathbb{R}, \Vert u \Vert_2\le{t}\}$ extension of 
-$\mathcal{K}=\{(x,y,z): \ \sqrt{x^2+y^2}\le{z}\}$\\
+$\mathcal{K}_3=\{(x,y,z): \ \sqrt{x^2+y^2}\le{z}\}$\\
 \textbf{$\mathbb{R}^n$-cone} $\mathcal{K}_n =\{x\in\mathbb{R}^n: \sqrt{x_2^2+x_3^2+...+x_n^2}\le{x_1}\}$\\
 \textbf{Rotated cone} 
 $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \ x_1, x_2 >0\}$\\
@@ -581,7 +581,7 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     \begin{center}
         $\begin{aligned}
             &\min_{x} {c^T{x}}\\
-            &\text{s.t.} \ \Vert A_i{x}+d_i \Vert_2 \le c_i^T{x}+b_i
+            &\text{s.t.} \ \Vert A_i{x}+b_i \Vert_2 \le c_i^T{x}+d_i
         \end{aligned}$
     \end{center}
     \hrule
@@ -671,7 +671,7 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
 Example (LP Program)
 \begin{verbatim}
 cvx_begin [quiet]
-    cvx_solver mosek        
+    [cvx_solver [mosek|sedumi]]        
     variable(s) x(2)    % name(dimension)
     minimize (c'*x)     %objective function
     subject to             
@@ -855,7 +855,7 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     \end{cases}$\\
     \hrule\noindent
     \textsf{\textbf{Grad. Algorithm as minimization of $q(x)$}}\\
-    GA can be interpreted also as minimization of the quadratic approximant when $\Vert x-x_k \Vert_2$ is small $\to$ $f_0(x)\simeq{q(x)=f_0(x_k) + \nabla{f_0(x_k)}^T(x-x_k)}$\\
+    GA can be interpreted also as minimization of the quadratic approximant when $\Vert x-x_k \Vert_2$ is small $\to$ $f_0(x)\simeq{q(x)=f_0(x_k) + \nabla{f_0(x_k)}^T(x-x_k)}+\frac{1}{2s}\Vert{x-x_k}\Vert_2$\\
     $\nabla{q(x)}\!=\!\nabla{f_0(x_k)}+\frac{1}{s}(x-x_k)=0 \Leftrightarrow\underset{\text{Gradient Algorithm}}{x_{k+1}=x_k-s\nabla{f_0(x_k)}}$\\
     \textbf{Conclusion:} $x$ is updated $\forall{k}$ by minimizing $q(x_k)$. $\square$
  \end{multicols}
@@ -872,7 +872,7 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     \begin{equation}
         \overbrace{x_{k+1} = x_k - \frac{g(x_k)}{g'(x_k)} = x_k - (\nabla^2{f_0(x_k)})^{-1}\nabla{f_0(x_k)}}^{\textsf{NEWTON METHOD}} \label{eq:NM}
     \end{equation}
-    {\small{$\underbrace{q_0(x)\!=\!f(x_k)\!+\!\nabla{f_0(x)}^T\!(x-x_k)\!+\!\frac{1}{2}(x-x_k)^T\nabla^2{f_0(x_k)}\!(x-x_k)}_{\text{quadratic approximant of $f_0$}}$}}
+    {\small{$\underbrace{q_0(x)\!=\!f(x_k)\!+\!\nabla{f_0(x)}^T\!(x-x_k)\!+\!\frac{1}{2}(x-x_k)^T\nabla^2{f_0(x_k)}\!(x-x_k)}_{\text{(better) quadratic approximant of $f_0$}}$}}
     \raggedcolumns
     \begin{multicols}{2}
         \noindent
@@ -904,8 +904,8 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
      \textbf{Convergence properties} $f_0$ strongly convex, $\nabla{f_0}, \nabla^2{f_0}$ Lipschitz continuous, $\eta \in (0, m^2/L)$. \\
      2 phases:
      $\begin{cases}
-        \Vert \nabla{f_0(x_k)} \Vert \ge \eta&\text{Damped phase}\\
-        \Vert \nabla{f_0(x_k)} \Vert < \eta&\text{Quadratically convergent phase}
+        \Vert \nabla{f_0(x_k)} \Vert_2 \ge \eta&\text{Damped phase}\\
+        \Vert \nabla{f_0(x_k)} \Vert_2 < \eta&\text{Quadratically convergent phase}
      \end{cases}$\\
      \textbf{Stopping criterion} $f_0(x_k) - f_0^* \le \lambda_k^2$\\
      \textsc{\underline{Other aspects (1): Equality constraints}}\\
@@ -1096,11 +1096,11 @@ log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad 
 \textbf{Schur complement} $M=\begin{bmatrix}
     A&X^T\\
     X&B
-\end{bmatrix}, A,B\in\mathbb{S}^n \ M\succeq0 \  \iff S=A-XB^{-1}X^T\succeq0$  \\
+\end{bmatrix}, A,B\in\mathbb{S}^n, X \in \mathbb{R}^{n,m}. \quad M\succeq0 \  \iff S=A-XB^{-1}X^T\succeq0$  \\
 \textbf{Young inequality} If $a\ge0$, $b\ge0$, $p>1$, $q>1$ such that $\frac{1}{p}+\frac{1}{q}=1$ then $ab \le \frac{1}{p}{a^p}+\frac{1}{q}{b^q}$ \textsf{(Jensen's inequality can be used in order to demonstrate it)}\\
 \textbf{Maxima of inner product over a ball} $\underset{\Vert x \Vert_p \le 1}{\max} x^Ty$ $\begin{cases}
     \max_{\Vert x \Vert_2\le1}{x^T{y}}=\Vert{y}\Vert_2, \ x^{*}=\frac{y}{\Vert{y}\Vert_2}&{p=2}\\
-    \max_{\Vert{x}\Vert_\infty\le1}{x^T{y}}=\sum_{i=1}^{n}{\vert{y_i}\vert}=\Vert{y}\Vert, \ x^{*}_\infty=\text{sgn}(y)&{p=\infty}\\
+    \max_{\Vert{x}\Vert_\infty\le1}{x^T{y}}=\sum_{i=1}^{n}{\vert{y_i}\vert}=\Vert{y}\Vert_1, \ x^{*}_\infty=\text{sgn}(y)&{p=\infty}\\
     \begin{aligned}
         &\max_{\Vert{x}\Vert_1\le{1}}{x^T{y}}=\max_i{\vert{y_i}\vert}=\Vert{y}\Vert_\infty \\
         &[x_1^{*}]_i=\begin{cases}

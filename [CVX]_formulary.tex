@@ -1,11 +1,10 @@
 \documentclass[a4paper]{article}
-
 \usepackage{graphicx}
 \usepackage{titlesec}
-\usepackage{xcolor}
 \usepackage{amsfonts}
 \usepackage{wrapfig}
 \usepackage{blindtext}
+\usepackage{xcolor}
 \usepackage{algorithm}
 \usepackage{wrapfig}
 \usepackage{algpseudocode}
@@ -15,7 +14,6 @@
 \usepackage{glossaries}
 \setlength{\abovedisplayskip}{-10pt}  % Rimuove lo spazio prima delle equazioni
 \setlength{\belowdisplayskip}{-10pt}  % Rimuove lo spazio prima delle equazioni
-
 
 
 %\titlespacing*{\title}{0pt}{20pt}{200pt}
@@ -48,7 +46,7 @@
 \maketitle
 \thispagestyle{empty}
 \vspace{0.15cm}
-\subsection*{\underline{1. Introduction}}
+\subsection*{\color{cyan} \textsf{\underline{1. INTRODUCTION}}}
 \textbf{Standard form for optimization problems} $p^*=\min_{x} f_0(x) \ \text{s.t.} \quad f_i(x) \le 0, i=1,..., m$\\
 where: $f_0: \mathbb{R}^n \to \mathbb{R}$ (\textbf{objective function}), $f_i: \mathbb{R}^n \to \mathbb{R}, $ (inequality constraints) \\
 \textbf{Feasible set} $\mathcal{X} = \{x \in \mathbb{R}^n:\ f_i(x)\le 0\}$ \ |
@@ -59,7 +57,8 @@ where: $f_0: \mathbb{R}^n \to \mathbb{R}$ (\textbf{objective function}), $f_i: \
 \textbf{Optimization problems in maximization form} $p^*=\max_{x} f_0 \iff -p^*=min_{x} \ -f_0(x) = min_{x} \ g_0(x)$\\
 \textbf{$\varepsilon$-suboptimality of a solution} $x\in \mathbb{R}^n \ \iff \ p^* \le f_0(x) \le p^*+\varepsilon$
 
-\subsection*{\underline{2. Vector, Projections, Functions, Gradients}}
+\subsection*{\color{cyan} 
+\textsf{\underline{2. VECTORS, PROJECTIONS, FUNCTIONS, GRADIENTS}}}
 \textbf{Vector} $x \in \mathbb{R}^n = [x_1 \quad x_2 \quad ... \quad x_n]^T$, $x_i\in\mathbb{R}$ -- 
 \textbf{Sum} $x, y \in \mathbb{R}^n, x+y \iff x_i+y_i, \ i=1,...,n$\\
 \textbf{Scalar multiplication} \ $\alpha \in \mathbb{R}, x \in \mathbb{R}^n, \ \alpha x \iff \ \alpha{x_i} \ i=1,...,n $\\
@@ -87,7 +86,7 @@ $\Vert x+y \Vert \le \Vert x \Vert + \Vert y \Vert$
  \end{cases}$\\
 \textbf{Vector $\perp$ Subspace} $\mathcal{S}\subseteq\mathcal{X}$, $x\in\mathcal{X}$, $x\perp\mathcal{S} \ \iff \langle{x,s}\rangle=0, \forall{s}\in\mathcal{S}$, $\mathcal{S}^{\perp}=\{x\in\mathcal{X}: \langle{x,s}\rangle=0, \forall{s}\in\mathcal{S}\}$\\
  \textbf{Orthogonal decomposition of a vector} $\forall{x}\in\mathcal{X}, x=x_1+x_2: \ x_1 \in \mathcal{S}, x_2 \in \mathcal{S}^{\perp}$ $\iff$ $\mathcal{X} = \mathcal{S} \oplus \mathcal{S}^{\perp}$\\
-\textbf{Projections} $\Pi_{\mathcal{S}}(x)=\min_{y\in\mathcal{S}} \Vert y-s \Vert$ -- (\textit{\textsf{Projection Theorem}})
+\textbf{Projections} $\Pi_{\mathcal{S}}(x)=\min_{y\in\mathcal{S}} \Vert y-x \Vert$ -- (\textit{\textsf{Projection Theorem}})
 $
 \begin{cases}
     x^*\in\mathcal{S} \ \text{is unique} \\
@@ -98,7 +97,6 @@ $\\
 $\text{graph}(f)=\{(x,f(x))\in\mathbb{R}^{n+1}: \ x\in \mathbb{R}^n\}$, $\text{epi}(f)=\{(x,t)\in\mathbb{R}^{n+1}: \ x\in\mathbb{R}^n,t>=f(x)\}$\\
 \textbf{Contour curves} $C_f(t)=\{x\in \mathbb{R}^n: f(x)=t, \  t\in\mathbb{R}\}$ -- \textbf{$\alpha$-sublevel set} $S_{\alpha}=\{x\in\mathbb{R}^n: \ f(x)\le t, \ t\in \mathbb{R}\}$       \\
 $f$ is \textbf{linear} $\iff$ $f(\alpha x_1 + \beta x_2) = \alpha f(x_1) + \beta f(x_2)$, $\alpha, \beta \in \mathbb{R}$, $\tilde{f}$ is \textbf{affine} $\iff$ $\tilde{f}-x_0$ is linear\\
-\textsf{any affine function can be written as: } $f(x)=a^T{x}+b$ where $a\in\mathbb{R}^n, \ b \in \mathbb{R}$, $b=f(0)$, $a_i = f(e_i)-b$, \\
 \textbf{Hyperplane} $\mathcal{H}=\{x\in\mathbb{R}^n: \ a^T x = b\}$, $a\in \mathbb{R}^n$ (normal direction), 
 $\mathcal{H}_{-} = \{x\in\mathbb{R}^n: \ a^T x \le b \}$, (closed half-space) \\
 $\mathcal{H}_{++}=\{x\in\mathbb{R}^n: \ a^T x > b\}$ (open half-space)\\
@@ -107,7 +105,8 @@ $\mathcal{H}_{++}=\{x\in\mathbb{R}^n: \ a^T x > b\}$ (open half-space)\\
 \bigg]^T$, $\nabla{f}(x_0)^T \cdot v $ (directional derivatives)\\
 \textsf{the rate of variation is maximal} when $\nabla{f}(x_0)  \parallel v $ \textsf{minimal when} $\nabla{f}(x_0) \perp v$, moreover $\nabla{f}(x_0)\perp C_f(t) \ \forall x_0 \in \text{dom}(f)$
 
-\subsection*{\underline{3. Matrices}}
+\subsection*{\color{cyan} 
+\textsf{\underline{3. MATRICES}}}
 \textbf{Matrix} $A\in\mathbb{R}^{m,n}$, $a_{ij}\in\mathbb{R}$ --- $AB_{ij}=R_i(A) \cdot C_j(B)$ (rows by column) --- $(AB)^T = B^T A^T$\\
 An \textbf{affine map} $f=Ax+b$, $A\in\mathbb{R}^{m,n}, \ b \in \mathbb{R}^n$ (generalization of an \textbf{affine function})\\
 \textbf{Subspaces associated with a matrix} $\begin{cases}
@@ -138,7 +137,8 @@ $\Vert A \Vert_1 = \max_{j=1,...,m}{\sum_{i=1}^n \vert a_{ij} \vert}, \
 \Vert A \Vert_\infty = \max_{i=1,...,m}{\sum_{j=1}^n \vert a_{ij} \vert}, \
 \Vert  A \Vert_2 = \sqrt{\lambda_{\text{max}} (A^T A)} $ {\tiny{(see variational characterization)}}\\
 \textbf{Spectral radius} $A\in\mathbb{R}^{n,n}$ $\rho(A)\doteq\max_{i=1,...,n} \vert \lambda_i(A) \vert$ --- $\rho(A)\le\min(\Vert A \Vert_1, \Vert A \Vert_\infty)$
-\subsection*{\underline{4. Symmetric Matrices and SVD}}
+\subsection*{\color{cyan}
+\textsf{\underline{4. SYMMETRIC MATRICES and SVD}}}
 $A\in\mathbb{R}^{n,n}$ is \textbf{symmetric} if $A=A^T$ , $\mathbb{S}^n$ is the subspace of \textbf{symmetric matrices} $n\times{n}$ \\
 \textbf{Examples:} (Hessian matrix given $f:\mathbb{R}^2\to\mathbb{R}$) $H=\begin{bmatrix}
     \frac{\partial{f}}{\partial{x_1^2}}&\frac{\partial{f}}{\partial{x_1{x_2}}}\\
@@ -194,7 +194,7 @@ $\tilde{X} \underset{\textsf{SVD}}{=}U_r\Sigma{V_r}^T, \ \tilde{X}\tilde{X}^T=U_
 from the theorem: $z=u_1$ (\textbf{first principal component}) $\to$ the $i$-th principal component $\iff$ $i$-th row of $U$ from SVD. $U_k \in \mathbb{R}^{n,k}$ (first $k$ principal components, columns of $U$) $\longrightarrow$ I choose $k$ according to $\eta_k$, then: $x=\bar{x}+U_k{z},
 \ z\in\mathbb{R}^k$ (zero-mean random factors). \textbf{Result:} we are using $z\in\mathbb{R}^k$, instead of $x\in\mathbb{R}^n$, $k<n$ to represent our data. $\square$\\
 
-\subsection*{\underline{5. Least Squares (LS)}}
+\subsection*{\color{cyan} \textsf{\underline{5. LEAST SQUARES (LS)}}}
 \textbf{Applications:} $\begin{cases}
     \textsf{approximation for a "fat" system of equations}\\
     \textsf{polynomial approximation/regression}
@@ -203,13 +203,13 @@ from the theorem: $z=u_1$ (\textbf{first principal component}) $\to$ the $i$-th 
 $f_0(x) = \sum_i {r_i^2(x)} =\sum_i {(a^T x - y_i)^2} = \Vert Ax-y \Vert_2^2$\\
 \textbf{Least Squqres problem: }    $\underset{x\in\mathbb{R}^n}{\text{min}} \ {\Vert Ax-y \Vert_2^2}$ (unconstrained)--- 
 \textbf{Solution} we have to find the roots of $\nabla{f_0}(x)=0$\\
-\textbf{Rewriting of the $f_0$} $\Vert Ax-y \Vert_2^2 = x^T{Q}x-2b^T{x}+c$, $Q=A^T A\succ0, \ b=A^T y, \ c=\Vert{y}\Vert_2^2$\\
+\textbf{Rewriting of the $f_0$} $\Vert Ax-y \Vert_2^2 = x^T{Q}x+2b^T{x}+c$, $Q=A^T A\succ0, \ b=-A^T y, \ c=\Vert{y}\Vert_2^2$\\
 $\nabla{f_0}(x)=0\iff Qx=b\iff \mathbf{A^T A x = A^T y}$ (normal equations) $x=(A^T A)^{-1} A^T y$ (for full column $A$)\\
 \textbf{Geometric interpretation (projections)} LS problem can be recasted as: $\min_{\tilde{y}\in\mathcal{R}(A)}{\Vert \tilde{y} - y \Vert_2^2}$\\
 You know from the projection theorem that: (i) $\tilde{y}\in\mathcal{R}(A)$, (ii) $(\tilde{y}-y) \perp \mathcal{R}(A) \iff (\tilde{y}-y)\in \mathcal{N}(A^T)\iff A^T{(\tilde{y}-y)}=0 \iff A^T{(Ax-y)}=0  \iff A^T A x = A^T y$ (normal equations)\\
 \textbf{Variants for the LS problem} $\begin{cases}
     \textsf{LS+\textbf{Equality constraints}}& \min_x {f_0} \ \text{s.t.} \  Cx=d \to x=\bar{x}+Nz, \  \text{span($N$)=$\mathcal{N}(C)$}\\
-     & \min_x {\Vert \bar{A}x-\bar{y}\Vert_2^2}, \ \bar{A}=AN,  \ \bar{y}=y-A\bar{x}\\
+     & \bar{x}: \ C\bar{x}=d , \quad \min_x {\Vert \bar{A}x-\bar{y}\Vert_2^2}, \ \bar{A}=AN,  \ \bar{y}=y-A\bar{x}\\
     \textsf{LS+\textbf{weighted residuals}}& f_0=\sum w_i r_i^2(x) = \Vert W(Ax-y) \Vert_2^2, \ W=diag(w_1,...,w_n)\\
      & \min_x \Vert A_w x -y_w \Vert_2^2, \ A_w = WA, \ y_w = Wy\\
     \textsf{LS+\textbf{$\ell_2$-regularization}}&\min_{x} {\Vert Ax-y \Vert_2^2} + \gamma\Vert x \Vert_2^2, \ 
@@ -221,7 +221,8 @@ You know from the projection theorem that: (i) $\tilde{y}\in\mathcal{R}(A)$, (ii
       & \min_x {\Vert{\tilde{A}x-\tilde{y}}\Vert}, \tilde{y} = [y\quad{0_n}]^T, \ \tilde{A} = [A\quad \sqrt{\lambda}{I_n}]^T
 \end{cases}$
 
-\subsection*{\underline{6. Convexity: sets and functions}} 
+\subsection*{\color{cyan} 
+\textsf{\underline{6. CONVEXITY: SETS and FUNCTIONS}} }
 Given $P=\{x^{(1)}, x^{(2)}, ..., x^{(m)}\}$, $\begin{cases}
     \textbf{linear combination} & \lambda_1 x^{(1)}+\lambda_2 x^{(2)}+...+\lambda_m x^{(m)} , \lambda_i \in \mathbb{R}\\
     \textbf{convex combination} & \lambda_i \in \mathbb{R}, \lambda_i \ge 0, \sum \lambda_i = 1
@@ -276,7 +277,8 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
 \textbf{Pointwise maximum} $f_\alpha(x)$ convex and $\alpha\in\mathcal{A}$, $\mathcal{A}$ compact set(closed and bounded), $f(x)=\max_{\alpha\in\mathcal{A}}{f_\alpha(x)}$ is convex\\
 \textbf{Jensen's inequality} Given $f:\mathbb{R}^n\to\mathbb{R}$ convex and $z\in\mathbb{R}^n$ a random variable such that $p\{z\in\text{int}\ {\text{dom}(f)}\}=1$ it holds that: $f(\mathbb{E}[z])\le\mathbb{E}[f(z)]$. \textbf{Case $z$ discrete R.V.} $p(z=x^{(i)})=\theta_i, \ i=1,...,m$, $\sum_i{\theta_i}=1$, $\theta_i\ge0$ $\Rightarrow$ $f\big(\sum_i{\theta_i{x^{(i)}}}\big)\le\sum_i{\theta_i{f\big(x^{(i)}\big)}}$\\
 
-\subsection*{\underline{7. Convex problems}}
+\subsection*{\color{cyan}
+\textsf{\underline{7. CONVEX PROBLEMS}}}
 \vspace{-0.5cm}
 \begin{multicols}{2}
     \begin{align}
@@ -290,13 +292,14 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
     \textbf{Feasible set} $\mathcal{X}$: convex since intersectio n between convex sets. $\mathcal{X}=\mathbb{R}^n$ (\textbf{unconstrained problem}).\\
     \textbf{Active/inactive constraint} $\begin{cases}
         f_i(x^*)<0&\text{inactive at $x^*$}\\
-        f_i(x)=0&\text{active at $x^*$}    
+        f_i(x^*)=0&\text{active at $x^*$}    
     \end{cases}$\\
     In some situations...
     $\mathcal{X}\ne\varnothing$ \textbf{but} $\mathcal{X}_{opt}=\varnothing$  
 \end{multicols}
 \noindent
-\textbf{Local and global optima (thm)} Given $\min_{x\in\mathcal{X}}{f_0(x)}$ ($f_0, \mathcal{X}$ convex) it holds that: (i) if $x\in\mathcal{X}$ is a local minimizer $\to$ is a \textbf{global minimizer}, (ii) the optimal set $\mathcal{X}_{opt}$ is a convex set.\\
+\textbf{Local and global optima (thm)} Given $\min_{x\in\mathcal{X}}{f_0(x)}$ ($f_0, \mathcal{X}$ convex) it holds that: (i) if $x\in\mathcal{X}$ is a local minimizer $\to$ is a \textbf{global minimizer}, (ii) the optimal set $\mathcal{X}_{opt}$ is a convex set. \quad
+$\mathcal{X}_{opt}=\{x\in\mathbb{R}^n: \ f(x)\le{p}^*\}$\\
 \textbf{\underline{PROBLEM TRANSFORMATIONS}}: how to formulate the problem into an "equivalent" way?\\
 
 \noindent
@@ -401,15 +404,16 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
 \noindent
 \textbf{Optimality (Prop)} Consider $\min_{x\in\mathcal{X}}{f_0(x)}$ with $f_0,\mathcal{X}$ convex. A feasible solution $x\in\mathcal{X}$ is \textbf{optimal} $\iff$ $\forall{y}\in\mathcal{X}$ \ $\nabla{f(x)}^T(y-x)\ge0$. \textbf{Geometric interpretation}: there is no direction for which the objective function can decrease.\\
 \textbf{Categories of directions} There are directions $v_\pm$ for which: $\begin{cases}
-    \nabla{f_0(x)}^T\cdot{v_+}>0&\text{$f_0$ increase}\\
+    \nabla{f_0(x)}^T\cdot{v_+}>0&\text{$f_0$ increase} \to \text{ascent direction}\\
     \nabla{f_0(x)}^T\cdot{v_+}<0&\text{$f_0$ decrease}\to\text{descent direction}
 \end{cases}$\\
 \textbf{Optimality (unconstrained)} $x\in\mathcal{X}$ is optimal $\iff$ $\nabla{f_0(x)}=0$\\
-\textbf{Optimality (equality constrained)} $x\in\mathcal{X}_{opt} \ \iff$ $Ax=b, \ \exists \nu\in\mathcal{R}^m: \ 
+\textbf{Optimality (equality constrained)} $x\in\mathcal{X}_{opt} \ \iff$ $Ax=b, \ \exists \nu\in\mathbb{R}^m: \ 
 \nabla{f_0(x)}+A^T\nu=0$\\
 \textbf{Optimality (inequality constrained)} Given $x$ feasible, let $\mathcal{A}(x)=\{i: \ f_i(x)=0\}$, $x\in\mathcal{X}_{opt}$ $\iff$ $\exists\lambda_i\ge0, \ i\in\mathcal{A}(x)$ $\nabla{f_0(x)}+\sum_{i\in\mathcal{A}(x)}{\lambda_i\nabla{f_i(x)}}=0$.
 
-\subsection*{\underline{8. Quadratic programs (QP)}} 
+\subsection*{\color{cyan}
+\textsf{\underline{8. QUADRATIC PROGRAMS (QP)}} }
 \textbf{Quadratic function} $f_0(x)=\frac{1}{2}x^T{H}x+c^T{x}+d$ (if $H=0$, $f_0$ is linear) The matrix $\begin{cases}
     H\succeq0&f_0 \ \text{convex, elliptical paraboloid}\\
     H\succ0&f_0 \ \text{strongly convex}\\
@@ -460,7 +464,9 @@ $h,g$ convex, $g$ non decreasing $\Rightarrow$ ${h}\circ{g}$ cvx --- $g$ concave
     \end{center}
 \end{multicols}
 
-\subsection*{\underline{9. Linear programs (LP)}}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{9. LINEAR PROGRAMS (LP)}}}
 \vspace{-0.3cm}
 \raggedcolumns
 \begin{multicols}{3}
@@ -552,7 +558,8 @@ if $x_f$ is not optimal $\iff$ there exists at least one $x$ for which $c^T{(x-x
     \end{center}
 \end{multicols}
 
-\subsection*{\underline{10. Second-order cone programs (SOCP)}}
+\subsection*{\color{cyan}
+\textsf{\underline{10. SECOND-ORDER CONE PROGRAMS (SOCP)}}}
 \textbf{Second order cone} $\mathcal{K}_p=\{(u,t): \ u\in\mathbb{R}^{p-1}, \ t\in\mathbb{R}, \Vert u \Vert_2\le{t}\}$ extension of 
 $\mathcal{K}_3=\{(x,y,z): \ \sqrt{x^2+y^2}\le{z}\}$\\
 \textbf{$\mathbb{R}^n$-cone} $\mathcal{K}_n =\{x\in\mathbb{R}^n: \sqrt{x_2^2+x_3^2+...+x_n^2}\le{x_1}\}$\\
@@ -618,7 +625,7 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     \begin{center}
         $\begin{aligned}
             &\min_{x,y} {c^T{x}+y}\\
-            &\text{s.t.} \ \bigg\Vert\binom{2Q^{1/2}}{y-1} \bigg\Vert_2 \le y+1 \\
+            &\text{s.t.} \ \bigg\Vert\binom{2Q^{1/2}x}{y-1} \bigg\Vert_2 \le y+1 \\
             &\text{s.t.} \ a_i^T{x} \le b_i, \ i=1,...,m
         \end{aligned}$
     \end{center}
@@ -665,7 +672,9 @@ $\mathcal{K}_n^r\doteq\{x\in\mathbb{R}^n: \ x_3^2+x_4^2+...+x_n^2\le2x_1{x_2}, \
     \end{center}
 \end{multicols}
 \vspace{-0.8cm}
-\subsection*{\underline{11. CVX modeling}}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{11. CVX MODELING}}}
 \begin{multicols}{2}
     \noindent
 Example (LP Program)
@@ -689,7 +698,9 @@ cvx_end
     \noindent
     useful function: \texttt{quad\_form(x,Q)}, returns $x^T{Q}x$ if $Q\succ0$
 \end{multicols}
-\subsection*{\underline{12. General optimization and Lagrangian Duality}}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{12. GENERAL OPTIMIZATION and LAGRANGIAN DUALITY}}}
 \textbf{Langrangian} $\mathcal{L}(x,\lambda, \nu)=f_0(x)+\sum_{i=1}^m{\lambda_i{f_i(x)}}+\sum_{i=1}^p{\nu_i{h_i(x)}}$ --- $\lambda_i, \ \nu_i$ \textbf{Lagrange multipliers} -- $f_0(x)\ge\mathcal{L}(x,\lambda,\nu)$\\
 \textbf{Lagrangian dual function} $g(\lambda, \nu) = \underset{x\in\mathcal{D}}{\text{inf}} \ {\mathcal{L}(x, \lambda, \nu)}, \ \lambda>0$, \ $g:\mathbb{R}^m\times\mathbb{R}^p\to\mathbb{R}$ -- \textbf{Properties} $\begin{cases}
     \text{jointly concave in} (\lambda,\nu)\\
@@ -761,7 +772,9 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
 \end{multicols}
 \newpage
 
-\subsection*{\underline{13. Gradient Algorithm (GA)} (\textsf{unconstrained case})}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{13. GRADIENT ALGORITHM (GA)} (\textsf{unconstrained case})}}
 \vspace{-0.3cm}
 \begin{multicols}{2}
     \noindent
@@ -858,12 +871,15 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
     GA can be interpreted also as minimization of the quadratic approximant when $\Vert x-x_k \Vert_2$ is small $\to$ $f_0(x)\simeq{q(x)=f_0(x_k) + \nabla{f_0(x_k)}^T(x-x_k)}+\frac{1}{2s}\Vert{x-x_k}\Vert_2$\\
     $\nabla{q(x)}\!=\!\nabla{f_0(x_k)}+\frac{1}{s}(x-x_k)=0 \Leftrightarrow\underset{\text{Gradient Algorithm}}{x_{k+1}=x_k-s\nabla{f_0(x_k)}}$\\
     \textbf{Conclusion:} $x$ is updated $\forall{k}$ by minimizing $q(x_k)$. $\square$
+    \textbf{Armijo for GD} $f_0(x_k+s_k{v_k})\le{f(x_k)-\alpha{s_k}{\Vert \nabla{f_0}(x_k) \Vert_2^2}}$
+    
  \end{multicols}
 \vspace{-1.1cm}
 \noindent
 \rule{\textwidth}{1.5pt}
 
-\subsection*{\underline{14. Newton Algorithm (NA)} (\textsf{unconstrained case})}   
+\subsection*{\color{cyan}
+\textsf{\underline{14. NEWTON ALGORITHM (NA)} (\textsf{unconstrained case})}   }
 \vspace{-0.3cm}
 \begin{multicols}{2}
     \noindent
@@ -893,7 +909,7 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
         \caption{Choice of $t$ (step-size) }
         \begin{algorithmic}[1]
             \State{$\alpha \in (0,\frac{1}{2}], \ \beta \in (0,1), t=1$}
-            \While{$f_0(x_k+tv) > f(x_k) + \alpha{t}\nabla{f_0(x_k)}^T{v}$}
+            \While{$f_0(x_k+tv) > f_0(x_k) + \alpha{t}\nabla{f_0(x_k)}^T{v}$}
                 {$t \ \gets \ t \beta$}
             \EndWhile
             \State{$x_{k+1} = x_k + tv$}
@@ -931,7 +947,9 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
      
 \end{multicols}
 
-\subsection*{\underline{15. Approaches for constrained optimization}}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{15. APPROACHES FOR CONSTRAINED OPTIMIZATION}}}
 \begin{center}
     \textsf{When there are constraints solving $\nabla{f_0(x)}=0$ it is not sufficient, $x^*$ must be feasible and $\mathcal{X}\ne\mathbb{R}^n$}
 \end{center}
@@ -1052,7 +1070,9 @@ $\underset{f_0 \ \text{differentiable, strong duality holds.}}{\textbf{KKT condi
 \end{multicols}
 %\newpage
 
-\subsection*{\underline{16. Geometric Programs(GP)}}
+\subsection*{\color{cyan}
+\textsf{
+    \underline{16. GEOMETRIC PROGRAMS (GP)}}}
 For GP: \textbf{variables} $\to$ positive (physical quantities), \textbf{objective/constraints} $\to$ non-negative linear combination of positive monomials.\\
 \textbf{Positive monomial} Given $x\in\mathbb{R}^n,\ a \in \mathbb{R}^n, \ c>0, x>0$ $cx^a=cx_1^{a_1}x_2^{a_2}...x_n^{a_n}\in\mathbb{R}^+$\\
 \textbf{Posynomial} $f:\mathbb{R}^n_{++}\to\mathbb{R}$, $f(x)=\sum_{i=1}^{k}{c_i x^{a_{(i)}}}, \ c_i, x>0, a_{(i)}\in\mathbb{R}^n$ -- $\underset{\textsf{composite fun. of posynomials}}{\textbf{Generalized posynomial}} \begin{cases}
@@ -1063,7 +1083,7 @@ For GP: \textbf{variables} $\to$ positive (physical quantities), \textbf{objecti
 Monomials, Posynomials and Generalized posynomials \textbf{are not convex!} $\to$ \underline{Problem transformation is needed}\\
 \textbf{Convex form for monomials} $y_i=\log x_i$ $\to \ \tilde{g}(x)=cx_1^{a_1}...x_n^{a_n}=e^{\log c}e^{\log{x_1^{a_1}}}...e^{\log{x_n^{a_n}}}=e^{a_1{y_1}+...+a_n{y_n}+\log{c}}=e^{a^T{y}+b}$. I can take the log (f convex $\circ$ f increasing) obtaining $g(x)=\log{\tilde{g}(x)}=a^T{y}+b$ $\to$ Linear Program\\
 \textbf{Convex form for posynomials} $\tilde{f}(x)=\sum_{i=1}^{k}{c_i{x}^{a_{(i)}}}=\sum_{i=1}^{k}{e^{a_{(i)}^T{y}+b_i}}\to
-\tilde{y}(x)=\log\bigg({\sum_{i=1}^{k}{e^{a_{(i)}^T{y}+b_i}}}\bigg)=\text{lse}(Ax+b)$\\
+\tilde{y}(x)=\log\bigg({\sum_{i=1}^{k}{e^{a_{(i)}^T{y}+b_i}}}\bigg)=\text{lse}(Ay+b)$\\
 log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad \dots \quad b_n]^T$\\
 \newpage
 
@@ -1092,11 +1112,12 @@ log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad 
 \underbrace{f_1(x)\le{t}, f_2(x)\le{t}, t+f_3(x)\le1}_{\text{GP constraints}}$ \\
 
 \noindent
-\subsection*{\underline{APPENDIX}}
+\subsection*{\color{cyan}
+\textsf{\underline{APPENDIX}}}
 \textbf{Schur complement} $M=\begin{bmatrix}
     A&X^T\\
     X&B
-\end{bmatrix}, A,B\in\mathbb{S}^n, X \in \mathbb{R}^{n,m}. \quad M\succeq0 \  \iff S=A-XB^{-1}X^T\succeq0$  \\
+\end{bmatrix}, A,B\in\mathbb{S}^n_{++}, X \in \mathbb{R}^{n,m}. \quad M\succeq0 \  \iff S=A-XB^{-1}X^T\succeq0$  \\
 \textbf{Young inequality} If $a\ge0$, $b\ge0$, $p>1$, $q>1$ such that $\frac{1}{p}+\frac{1}{q}=1$ then $ab \le \frac{1}{p}{a^p}+\frac{1}{q}{b^q}$ \textsf{(Jensen's inequality can be used in order to demonstrate it)}\\
 \textbf{Maxima of inner product over a ball} $\underset{\Vert x \Vert_p \le 1}{\max} x^Ty$ $\begin{cases}
     \max_{\Vert x \Vert_2\le1}{x^T{y}}=\Vert{y}\Vert_2, \ x^{*}=\frac{y}{\Vert{y}\Vert_2}&{p=2}\\
@@ -1109,7 +1130,27 @@ log-sum-exp (lse) function is convex -- $A\in\mathbb{R}^{k,n}, \ b = [b_1 \quad 
        \end{cases}, \ i=1,...,n
     \end{aligned}&p=1
    
-\end{cases}$
+\end{cases}$\\
+
+\noindent
+\textbf{\underline{COORDINATE DESCENT ALGORITHM for solving LASSO}}
+\begin{multicols}{2}
+    \begin{equation}\label{eq:LASSO} \tag{LASSO}
+        \min_{x\in\mathbb{R}^n} \frac{1}{2} \Vert Ax-y \Vert_2^2 + \lambda \Vert x \Vert_1
+    \end{equation}
+    Standard approaches can be very slow in the computation of the optimum. The solution is using a per-coordinate approach.
+    $n$ \textbf{one-dimensional} optimization problems are solved, minimizing with respect to the $i$-th variable (keeping fixed the others).
+
+    \begin{align*}
+        &\min_{x_i \in \mathbb{R}} \frac{1}{2} \Vert a_i{x_i}-\tilde{y}_i \Vert_2^2 + \lambda \vert x_i \vert + c_i \\
+        &\tilde{y}_i = y-A{x_{-i}} \quad  c_i=\lambda \Vert x_{-i} \Vert_1, \quad \{x_{-i}: \ x_i=0\}\\
+        &x_i^* = \begin{cases}
+            0 & \vert a_i^T{\tilde{y}_i} \vert \le \lambda\\
+            \xi_{ls}-\text{sign}(\xi_{ls})\frac{a_i^T \tilde{y}_i}{\Vert a_i \Vert_2^2}&\vert a_i^T{\tilde{y}_i} \vert > \lambda
+        \end{cases},  \quad
+            \xi_{ls}=\frac{a_i^{T}\tilde{y}_i}{\Vert a_i \Vert_2^2}
+    \end{align*}
+\end{multicols}
 
 
 \end{document}
